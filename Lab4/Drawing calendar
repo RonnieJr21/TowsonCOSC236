@@ -1,0 +1,31 @@
+public class DrawCalendar {
+
+   public static void main(String[] agrs){
+      drawCalendar();
+   }
+   
+   public static void drawCalendar() {
+      weekDays();
+      drawTop();
+      drawBottom();
+   }
+   
+   public static void weekDays() {
+   System.out.println ("Sun      Mon      Tue     Wed    Thur    Fri     Sat");
+   }
+      
+   public static void drawTop() {
+   System.out.println ("+-------+-------+-------+-------+-------+-------+-------+");
+   System.out.println ("|       |       |       |       |       |       |       |");
+   System.out.println ("|       |       |       |       |       |       |       |");
+   System.out.println ("|       |       |       |       |       |       |       |");
+   
+   }  
+   
+   public static void drawBottom() {
+   System.out.println ("|       |       |       |       |       |       |       |");
+   System.out.println ("|       |       |       |       |       |       |       |");
+   System.out.println ("|       |       |       |       |       |       |       |");
+   System.out.println ("+-------+-------+-------+-------+-------+-------+-------+");
+   }
+}   
