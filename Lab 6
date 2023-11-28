@@ -6,12 +6,16 @@ public class RockPaperScissors {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
+        
+        int userScore = 0;
+        int computerScore = 0;
 
         while (true) {
             System.out.println("Enter your move (rock, paper, or scissors) or type 'exit' to end the game: ");
             String playerMove = scanner.nextLine().toLowerCase();
 
             if (playerMove.equals("exit")) {
+                System.out.println("Final score: You = " + userScore + "Computer = " + computerScore); 
                 System.out.println("Thanks for playing. Exiting the game.");
                 break;
             }
@@ -26,6 +30,13 @@ public class RockPaperScissors {
 
             String result = determineWinner(playerMove, computerMove);
             System.out.println("Result: " + result);
+            
+            if(result.equals("You win!")){
+               userScore++;
+            }else if (result.equals("Computer wins!")){
+               computerScore++;
+            }
+                 
         }
 
         scanner.close();
