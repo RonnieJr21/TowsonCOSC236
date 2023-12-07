@@ -1,3 +1,12 @@
+/*
+ * Lab5 When given the number to shift each character, propery shift each character according to the ascii alphabet and
+ return the encrypted message to be displayed later.
+ * COSC 236 Section 102
+ * Program #6/Lab Assignment #4 Ceaser Cipher
+ *
+ *
+ * @author Ronnie Huggins & Gradieu Kisala
+*/
 // prompt user for the key
 //prompt the user for the clear text
 
@@ -7,13 +16,16 @@ import java.util.*;
 
 
 class cipher{
-    
+    /**
+     * The main java method responsible for calling the encrypt function
+     * 
+     * @param args -  string of arguments to pass to the function.
+     */
     public static void main(String[] args){
         Scanner in = new Scanner(System.in);
         String cipherText;
         String clearText = "";
 
-        System.out.println((int)' ');
         System.out.print("Please enter your key: ");
         int key = in.nextInt();
         in.nextLine();
@@ -27,12 +39,18 @@ class cipher{
             clearText = clearText + userInput;
             userInput = in.nextLine().toUpperCase();
         }
-        System.out.println(clearText);
         
         cipherText = Encrypt(key, clearText);
         System.out.println(cipherText);
 
     }
+    /**
+     * Encrypt method which is responsible for the actual encryption of the phrase entered in with the key
+     * following it.
+     * 
+     * @param key - the number of letters to shift.
+     * @param text - the text to be shifted.
+     */
 
     public static String Encrypt(int key, String text){
         char[] encrypted_text = new char[100];
@@ -45,7 +63,6 @@ class cipher{
             }
             ascii_char = ascii_char + key;
             encrypted_text[i] = ((char)ascii_char);
-            System.out.print(ascii_char);
         
         }
         System.out.println();
@@ -55,8 +72,4 @@ class cipher{
         return cipherText;
     }
 
-    // public String Decrypt(String key, String text){
-        
-    //     return "o";
-    // }
 }
